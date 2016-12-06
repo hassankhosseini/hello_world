@@ -35,4 +35,4 @@ To deploy [Memcached](https://hub.docker.com/_/memcached) or [Redis](https://hub
 
 3. Scroll down, ignore the warnings, and click on Create
 
-4. Once the deployment is running, you can check the [memcached_test.rb](memcached_test.rb) and [redis_test.rb](redis_test.rb) files for examples of how to connect to these services.
+4. Once the deployment is running, you can check the [memcached_test.rb](memcached_test.rb) and [redis_test.rb](redis_test.rb) files for examples of how to connect to these services by using deployment ENV variables to pass the memcached/redis host and port to your application.
