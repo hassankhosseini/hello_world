@@ -1,5 +1,9 @@
 require 'dalli'
+
+# On AbarCloud, this is <ServiceName>.<ProjectName>.svc.cluster.local, for example memcached.my-project.svc.cluster.local
 host = ENV['MY_MEMCACHED_HOST']
+
+# This is usually 11211
 port = ENV['MY_MEMCACHED_PORT']
 
 options = { :namespace => "app_v1", :compress => true }
