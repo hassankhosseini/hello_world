@@ -24,7 +24,8 @@ The Dockerfile in this repository has [`CMD sh commands.sh`](Dockerfile#L17). So
 
 ## To deploy on AbarCloud:
 
-Follow the instructions [here](https://docs.abarcloud.com) to deploy the basic version of this application.
+Follow the instructions [here](https://docs.abarcloud.com). Don't forget to set the GitHub branch to `advanced`, i.e.:
+  `oc new-app --strategy=docker https://github.com/abarcloud/hello_world#advanced`
 
 To deploy [Memcached](https://hub.docker.com/_/memcached) or [Redis](https://hub.docker.com/_/redis/) (without persistance storage) on AbarCloud:
 
