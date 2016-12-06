@@ -1,6 +1,6 @@
 #!/bin/bash
 
-if [ "$ENTRYPOINT" = "worker" ]
+if [ "$ENTRYPOINT" = "workers" ]
 then
   echo Starting workers
   ruby -e "puts 'Fake workers running...'"
