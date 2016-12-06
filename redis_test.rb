@@ -1,6 +1,6 @@
 require "redis"
-host = ENV['REDIS_HOST']
-port = ENV['REDIS_PORT'] || 6380
+host = ENV['MY_REDIS_HOST']
+port = ENV['MY_REDIS_PORT']
 
 client = Redis.new(:host => host, :port => port)
 
@@ -9,6 +9,3 @@ client.set("my_key", "Hello World")
 
 value = client.get('my_key')
 puts "Reading my_key from redis: #{value}"
-
-puts "-----"
-puts "Redis works!"
