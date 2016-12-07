@@ -9,12 +9,12 @@ then
     sleep 1
   done
 
-elif [ "$ENTRYPOINT" = "admin_ui" ]
+elif [ "$ENTRYPOINT" = "admin-ui" ]
 then
-  echo Starting admin_ui
+  echo Starting admin-ui
   while :
   do
-    ruby -e "puts 'Fake admin_ui is running...'"
+    ruby -e "puts 'Fake admin-ui is running...'"
     sleep 1
   done
 
