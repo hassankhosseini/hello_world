@@ -10,7 +10,7 @@ RUN bundle install
 
 COPY . .
 
-RUN chmod -R g+rwx /src
+RUN chmod -R ug+rwx /src
 USER 1001
 
 EXPOSE 8080
