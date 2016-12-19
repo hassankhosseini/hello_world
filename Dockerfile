@@ -14,4 +14,4 @@ RUN chmod -R ug+rwx /src
 USER 1001
 
 EXPOSE 8080
-CMD bundle exec puma -C puma.rb
+CMD ["bundle", "exec", "puma", "-C", "puma.rb"]
