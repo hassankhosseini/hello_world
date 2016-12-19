@@ -14,4 +14,4 @@ RUN chmod -R ug+rwx /src
 USER 1001
 
 EXPOSE 8080
-CMD sh commands.sh
+CMD ["sh", "commands.sh"]

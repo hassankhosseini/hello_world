@@ -20,5 +20,5 @@ then
 
 else
   echo Starting web process
-  bundle exec puma -C puma.rb
+  exec bundle exec puma -C puma.rb
 fi
