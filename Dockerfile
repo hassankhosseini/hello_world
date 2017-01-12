@@ -10,6 +10,7 @@ RUN bundle install
 
 COPY . .
 
+RUN mkdir /var/pvol
 RUN chmod -R ug+rwx /src /var/pvol
 USER 1001
 
