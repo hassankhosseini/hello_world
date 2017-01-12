@@ -10,7 +10,7 @@ RUN bundle install
 
 COPY . .
 
-RUN chmod -R ug+rwx /src
+RUN chmod -R ug+rwx /src /var/pvol
 USER 1001
 
 EXPOSE 8080
