@@ -7,7 +7,7 @@ get '/' do
 end
 
 class Hello
-  attr_accessor :title, :message
+  attr_accessor :title, :message, :env
   def initialize(title, message)
     @title = title
     @message = message
