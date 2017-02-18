@@ -6,7 +6,7 @@ describe "#hello" do
   end
 
   it "returns the correct title" do
-    expect(@hello.title).to eq("Welcome to AbarCloud")
+    expect(@hello.title).to eq("Welcometo AbarCloud")
   end
 
   it "returns the correct message" do

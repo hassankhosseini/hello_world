@@ -11,5 +11,6 @@ class Hello
   def initialize(title, message)
     @title = title
     @message = message
+    @env = ENV['ENV']
   end
 end
