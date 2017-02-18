@@ -11,6 +11,6 @@ class Hello
   def initialize(title, message)
     @title = title
     @message = message
-    @env = ENV['ENV']
+    @env = ENV['DEPLOYMENT_ENV']
   end
 end
