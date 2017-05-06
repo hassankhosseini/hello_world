@@ -1,3 +1,6 @@
+# Depending on your image, you might or might not need to start this file with "#!/bin/bash"
+# Try without it, and if it doesn't work, add it.
+
 # Update the following line with whatever command you use to run your tests (e.g. `npm test`)
 TEST_COMMAND="bundle exec rspec spec"
 
