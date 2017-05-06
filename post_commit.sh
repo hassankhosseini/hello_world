@@ -43,3 +43,4 @@ else
  echo "Exiting with 1 so image is not pushed"
  exit 1
 fi
+#
