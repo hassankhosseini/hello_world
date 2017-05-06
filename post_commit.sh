@@ -1,5 +1,3 @@
-#!/bin/bash
-
 # Update the following line with whatever command you use to run your tests (e.g. `npm test`)
 TEST_COMMAND="bundle exec rspec spec"
 
