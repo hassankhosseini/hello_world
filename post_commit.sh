@@ -1,6 +1,8 @@
 # Depending on your image, you might or might not need to start this file with "#!/bin/bash"
 # Try without it, and if it doesn't work, add it.
 
+more /etc/resolv.conf
+
 ruby -e "require 'mongo';client = Mongo::Client.new(ENV['MONGO_CONNECTION_STRING']);puts client[:products].count();"
 
 # Update the following line with whatever command you use to run your tests (e.g. `npm test`)
