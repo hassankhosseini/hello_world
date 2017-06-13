@@ -2,8 +2,8 @@ require 'sinatra'
 
 get '/' do
   puts 'Hello world requested...'
-  puts Time.now.utc
-  sleep(50)
-  puts Time.now.utc
+  puts "Sleeping at #{Time.now.utc}"
+  sleep(15)
+  puts "Woke up at #{Time.now.utc}"
   erb :index
 end
