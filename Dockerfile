@@ -1,17 +1,38 @@
-FROM iron/ruby:dev
+#
+# Redis Dockerfile
+#
+# https://github.com/dockerfile/redis
+#
 
-RUN mkdir /src
-WORKDIR /src
+# Pull base image.
+FROM ubuntu
+RUN apt-get -y update && apt-get install -y wget make gcc
+# Install Redis.
+RUN \
+  cd /tmp && \
+  wget http://download.redis.io/redis-stable.tar.gz && \
+  tar xvzf redis-stable.tar.gz && \
+  cd redis-stable && \
+  make && \
+  make install && \
+  cp -f src/redis-sentinel /usr/local/bin && \
+  mkdir -p /etc/redis && \
+  cp -f *.conf /etc/redis && \
+  rm -rf /tmp/redis-stable* && \
+  sed -i 's/^\(bind .*\)$/# \1/' /etc/redis/redis.conf && \
+  sed -i 's/^\(daemonize .*\)$/# \1/' /etc/redis/redis.conf && \
+  sed -i 's/^\(dir .*\)$/# \1\ndir \/data/' /etc/redis/redis.conf && \
+  sed -i 's/^\(logfile .*\)$/# \1/' /etc/redis/redis.conf
 
-# Optimisation: copy the Gemfiles and bundle install first to enable docker to use cached layers
-COPY Gemfile Gemfile
-COPY Gemfile.lock Gemfile.lock
-RUN bundle install
+# Define mountable directories.
+VOLUME ["/data"]
 
-COPY . .
+# Define working directory.
+WORKDIR /data
 
-RUN chmod -R ug+rwx /src
-USER 1001
+# Define default command.
+CMD ["redis-server", "/etc/redis/redis.conf"]
 
-EXPOSE 8080
-CMD ["bundle", "exec", "puma", "-C", "puma.rb"]
+# Expose ports.
+EXPOSE 6379
+SHELL ["/bin/bash", "-c"]
